@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">My Resume</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#aboutMe">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- First Part: About Me -->
+    <div class="section" id="aboutMe">
+        <div class="container text-center">
+            <h2>About Me</h2>
+            <img src="https://via.placeholder.com/200" class="photo" alt="My Photo">
+            <h3>John Doe</h3>
+            <p>Web Developer</p>
+        </div>
+    </div>
+
+    <!-- Second Part: Experience -->
+    <div class="section bg-light" id="experience">
+        <div class="container text-center">
+            <h2>Experience</h2>
+            <p><strong>Web Developer at ABC Corp</strong> (2019 - Present)</p>
+            <ul>
+                <li>Developed and maintained web applications.</li>
+                <li>Worked with frontend and backend technologies.</li>
+                <li>Led a team of junior developers.</li>
+            </ul>
+            <p><strong>Junior Developer at XYZ Ltd</strong> (2017 - 2019)</p>
+            <ul>
+                <li>Assisted in building websites using HTML, CSS, and JavaScript.</li>
+                <li>Collaborated with design teams to create user-friendly interfaces.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Third Part: Contact -->
+    <div class="section" id="contact">
+        <div class="container text-center">
+            <h2>Contact</h2>
+            <p>Email: john.doe@example.com</p>
+            <p>Phone: +123 456 7890</p>
+            <a href="mailto:john.doe@example.com" class="btn btn-primary">Email Me</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 John Doe</p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
