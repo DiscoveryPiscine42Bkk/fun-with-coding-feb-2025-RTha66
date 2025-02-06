@@ -5,39 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         table {
             width: 100%;
-            max-width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
+            height: 100vh;
+            border-collapse: collapse; 
+            margin: 0;
         }
+
         td {
             width: 50%;
-            height: 100px;
+            height: 50%;
             text-align: left;
             font-size: 20px;
             padding-left: 10px;
-            border: 1px solid black;
+            border: none;
         }
+
         .first-cell {
             background-color: #c2c27b;
         }
+
         .second-cell {
             background-color: #f4c2c2;
         }
     </style>
 </head>
 <body>
-
-    <h2>Exercise 06</h2>
-    <h3>Responsive</h3>
-
     <table>
         <tr>
             <td class="first-cell">First cell</td>
             <td class="second-cell">Second cell</td>
         </tr>
     </table>
-
 </body>
 </html>
