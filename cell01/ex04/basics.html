@@ -22,12 +22,18 @@
             display: flex;
             justify-content: center;
             margin-top: 30px;
+            gap: 30px; /* เพิ่มระยะห่างระหว่างภาพ */
         }
 
         .images-container img {
-            margin: 0 20px;
-            max-width: 45%;
+            width: 250px; /* กำหนดความกว้างคงที่ของรูปภาพ */
+            height: auto; /* ให้ความสูงปรับอัตโนมัติตามสัดส่วนของรูป */
             border-radius: 10px;
+            transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงแบบนุ่มนวล */
+        }
+
+        .images-container img:hover {
+            transform: scale(1.05); /* เมื่อเมาส์เลื่อนมาที่รูป จะขยายเล็กน้อย */
         }
 
         .images-container a {
@@ -59,12 +65,12 @@
 
     <div class="images-container">
         <div>
-            <img src="https://via.placeholder.com/300" alt="Online Shop 1">
-            <a href="https://www.example1.com">Visit Shop 1</a>
+            <img src="https://cdn-1.webcatalog.io/catalog/shopee-indonesia/shopee-indonesia-icon.png?v=1714775815058" alt="Online Shop 1">
+            <a href="https://shopee.co.th/?gad_source=1&gclid=CjwKCAiA2JG9BhAuEiwAH_zf3tiHJon5QxEIJaYuqy-HV7GKdkvdQvwRGP9ogOH7MWw_je6N9RXv3hoClpYQAvD_BwE">SHOPEE</a>
         </div>
         <div>
-            <img src="https://via.placeholder.com/300" alt="Online Shop 2">
-            <a href="https://www.example2.com">Visit Shop 2</a>
+            <img src="https://laz-img-cdn.alicdn.com/tfs/TB1PApewFT7gK0jSZFpXXaTkpXa-200-200.png" alt="Online Shop 2">
+            <a href="https://pages.lazada.co.th/wow/i/th/LandingPage/lazmall-home?spm=a2o4m.home.officialStores.1.49262a80PnERJR&wh_weex=true&wx_navbar_transparent=true&data_prefetch=true&scm=1003.4.icms-zebra-5000381-2586951.OTHER_5988339032_4972683&algArgs=&exlaz=e_v0kBMwgV2T9sbdaDA0DvZJn9Ji3%252FSTAWDAo3n60nGqFwfKd6uf5SzAoQyImlfTPCB%252F%252FWJ%252BYBXH4Kz7NNbuv8%252BxlguXCOM6NHOeOaz2oUA1QUr03zp0NFmL9lxH8yN0%252FjX9mOBgmk%252B0oouqEhUVJDR%252BItvEl8y%252Bl1uTbrgmlDAQzMCG%252Bx2s7ivys9CgXTnW7yzQxz6eRCsIp4uECys3%252B8WXDbkOG3bWrLwfApO9Gl%252FMHX8ihLrvz8X84ULf1%252B7YbuNk8SeV5niRyNlTK%252BMXwmyKTkRe6CXsYl5qKIpQcLopl8zHj%252F8%252BMsDnV0ZvOeGENU&gad_source=1">LAZADA</a>
         </div>
     </div>
 
