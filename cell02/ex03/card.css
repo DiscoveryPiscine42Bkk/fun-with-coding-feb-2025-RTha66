@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,62 +14,68 @@ body {
 }
 
 .card {
-    width: 300px;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 20px;
 }
 
+.card h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
 .card img {
-    width: 100%;
+    width: 70%;
     height: auto;
     border-radius: 50%;
+    border: 3px solid #ddd;
+    margin-bottom: 20px;
 }
 
-.card h2 {
-    margin: 0;
+.info h3 {
     font-size: 1.5em;
-    color: #333;
+    margin-bottom: 10px;
 }
 
-.card .info {
-    margin: 10px 0;
-}
-
-.card .info h3 {
-    font-size: 1.2em;
-    color: #333;
-}
-
-.card .info p {
-    color: #666;
+.info p {
     font-size: 1em;
+    color: #777;
 }
 
-.card .login {
+.login {
     font-weight: bold;
+    margin-top: 5px;
 }
 
-.card .social-icons {
-    margin: 10px 0;
+.social-icons {
+    margin-top: 15px;
 }
 
-.card .social-icons a {
+.social-icons a {
     margin: 0 10px;
+    display: inline-block;
 }
 
-.card button {
-    background-color: #333;
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+button {
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    margin-top: 20px;
     cursor: pointer;
+    width: 100%;
+    font-size: 1em;
 }
 
-.card button:hover {
-    background-color: #555;
+button:hover {
+    background-color: #45a049;
 }
