@@ -57,14 +57,12 @@
     <div class="result" id="result"></div>
 
     <script>
-        // Function to perform the calculation
         function calculate() {
             const leftOperand = parseInt(document.getElementById("leftOperand").value);
             const rightOperand = parseInt(document.getElementById("rightOperand").value);
             const operator = document.getElementById("operator").value;
             const resultDiv = document.getElementById("result");
 
-            // Check if inputs are valid positive integers
             if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
                 alert("Error :(");
                 console.log("Error :(");
