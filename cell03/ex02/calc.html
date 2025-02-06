@@ -4,7 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>It's over 9000</title>
-    <link rel="stylesheet" href="calc.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input, select {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,7 +46,58 @@
         <button id="calculateBtn">Try me!</button>
     </div>
 
-    <script src="calc.js"></script>
+    <script>
+        document.getElementById('calculateBtn').addEventListener('click', function() {
+            const leftOperand = parseFloat(document.getElementById('leftOperand').value);
+            const rightOperand = parseFloat(document.getElementById('rightOperand').value);
+            const operator = document.getElementById('operator').value;
+
+            if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
+                alert('Error: Please enter positive numbers only.');
+                return;
+            }
+
+            let result;
+
+            switch (operator) {
+                case '+':
+                    result = leftOperand + rightOperand;
+                    break;
+                case '-':
+                    result = leftOperand - rightOperand;
+                    break;
+                case '*':
+                    result = leftOperand * rightOperand;
+                    break;
+                case '/':
+                    if (rightOperand === 0) {
+                        alert("It's over 9000!");
+                        result = null;
+                    } else {
+                        result = leftOperand / rightOperand;
+                    }
+                    break;
+                case '%':
+                    if (rightOperand === 0) {
+                        alert("It's over 9000!");
+                        result = null;
+                    } else {
+                        result = leftOperand % rightOperand;
+                    }
+                    break;
+            }
+
+            if (result !== null) {
+                alert(`Result: ${result}`);
+                console.log(`Result: ${result}`);
+            }
+        });
+
+        // Every 30 seconds
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
 
 </body>
 </html>
