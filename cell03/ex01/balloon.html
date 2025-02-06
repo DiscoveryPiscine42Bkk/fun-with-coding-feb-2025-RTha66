@@ -1,15 +1,65 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explode this balloon</title>
-    <link rel="stylesheet" href="balloon.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
 <body>
 
     <div id="balloon"></div>
 
-    <script src="balloon.js"></script>
+    <script>
+        const balloon = document.getElementById('balloon');
+        let size = 200;
+        let colorIndex = 0;
+        const colors = ['red', 'green', 'blue'];
+
+        balloon.addEventListener('click', function() {
+            size += 10;
+            if (size > 420) {
+                size = 200;
+                balloon.style.backgroundColor = 'red';
+            } else {
+                colorIndex = (colorIndex + 1) % colors.length;
+                balloon.style.backgroundColor = colors[colorIndex];
+            }
+            balloon.style.width = size + 'px';
+            balloon.style.height = size + 'px';
+        });
+
+        balloon.addEventListener('mouseenter', function() {
+            if (size > 200) {
+                size -= 5;
+                balloon.style.width = size + 'px';
+                balloon.style.height = size + 'px';
+            }
+        });
+
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+
 </body>
 </html>
