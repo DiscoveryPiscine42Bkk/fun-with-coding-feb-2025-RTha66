@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>It's over 9000</title>
+    <title>Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,9 +12,11 @@
         }
 
         input, select {
-            margin: 10px;
             padding: 10px;
             font-size: 16px;
+            margin: 10px;
+            width: 150px;
+            text-align: center;
         }
 
         button {
@@ -29,12 +31,18 @@
         button:hover {
             background-color: #45a049;
         }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
 
+    <h1>Calculator</h1>
     <div>
-        <input type="number" id="leftOperand" placeholder="Enter number">
+        <input type="number" id="leftOperand" placeholder="Left operand" min="0">
         <select id="operator">
             <option value="+">+</option>
             <option value="-">-</option>
@@ -42,60 +50,64 @@
             <option value="/">/</option>
             <option value="%">%</option>
         </select>
-        <input type="number" id="rightOperand" placeholder="Enter number">
+        <input type="number" id="rightOperand" placeholder="Right operand" min="0">
         <button id="calculateBtn">Try me!</button>
     </div>
 
-    <script>
-        document.getElementById('calculateBtn').addEventListener('click', function() {
-            const leftOperand = parseFloat(document.getElementById('leftOperand').value);
-            const rightOperand = parseFloat(document.getElementById('rightOperand').value);
-            const operator = document.getElementById('operator').value;
+    <div class="result" id="result"></div>
 
+    <script>
+        // Function to perform the calculation
+        function calculate() {
+            const leftOperand = parseInt(document.getElementById("leftOperand").value);
+            const rightOperand = parseInt(document.getElementById("rightOperand").value);
+            const operator = document.getElementById("operator").value;
+            const resultDiv = document.getElementById("result");
+
+            // Check if inputs are valid positive integers
             if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
-                alert('Error: Please enter positive numbers only.');
+                alert("Error :(");
+                console.log("Error :(");
+                return;
+            }
+
+            if ((operator === "/" || operator === "%") && rightOperand === 0) {
+                alert("It’s over 9000!");
+                console.log("It’s over 9000!");
                 return;
             }
 
             let result;
 
             switch (operator) {
-                case '+':
+                case "+":
                     result = leftOperand + rightOperand;
                     break;
-                case '-':
+                case "-":
                     result = leftOperand - rightOperand;
                     break;
-                case '*':
+                case "*":
                     result = leftOperand * rightOperand;
                     break;
-                case '/':
-                    if (rightOperand === 0) {
-                        alert("It's over 9000!");
-                        result = null;
-                    } else {
-                        result = leftOperand / rightOperand;
-                    }
+                case "/":
+                    result = leftOperand / rightOperand;
                     break;
-                case '%':
-                    if (rightOperand === 0) {
-                        alert("It's over 9000!");
-                        result = null;
-                    } else {
-                        result = leftOperand % rightOperand;
-                    }
+                case "%":
+                    result = leftOperand % rightOperand;
                     break;
+                default:
+                    return;
             }
 
-            if (result !== null) {
-                alert(`Result: ${result}`);
-                console.log(`Result: ${result}`);
-            }
-        });
+            alert("Result: " + result);
+            console.log("Result: " + result);
+            resultDiv.textContent = "Result: " + result;
+        }
 
-        // Every 30 seconds
-        setInterval(function() {
-            alert('Please, use me...');
+        document.getElementById("calculateBtn").addEventListener("click", calculate);
+
+        setInterval(() => {
+            alert("Please, use me...");
         }, 30000);
     </script>
 
