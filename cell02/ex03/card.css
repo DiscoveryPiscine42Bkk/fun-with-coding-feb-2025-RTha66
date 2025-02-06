@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card .info {
+    margin: 10px 0;
+}
+
+.card .info h3 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.card .info p {
+    color: #666;
+    font-size: 1em;
+}
+
+.card .login {
+    font-weight: bold;
+}
+
+.card .social-icons {
+    margin: 10px 0;
+}
+
+.card .social-icons a {
+    margin: 0 10px;
+}
+
+.card button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #555;
+}
