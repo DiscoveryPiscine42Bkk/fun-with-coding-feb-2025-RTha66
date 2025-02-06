@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    width: 50%;
+    height: 100px;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 10px;
+    border: 1px solid black;
+}
+
+.first-cell {
+    background-color: #c2c27b;
+}
+
+.second-cell {
+    background-color: #f4c2c2;
+}
+
+@media screen and (max-width: 600px) {
+    td {
+        font-size: 16px;
+        padding-left: 5px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    td {
+        font-size: 20px;
+    }
+}
