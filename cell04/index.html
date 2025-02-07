@@ -3,149 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume - Doraemon</title>
+    <title>Our Profiles</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Comic Sans MS', sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8bbd0; /* สีชมพูหวาน */
+            color: #6a4e23;
+            text-align: center;
         }
 
-        .navbar {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background-color: #0044cc;
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff66b2; /* สีชมพูสดใสของบาร์บี้ */
+            margin-top: 50px;
+            font-size: 3em;
         }
 
-        .navbar-brand {
-            color: #fff !important;
-        }
-
-        .navbar-nav .nav-link {
-            color: #fff !important;
-            margin-left: 15px;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #f0f8ff !important;
-            font-weight: bold;
-        }
-
-        .section {
-            padding: 80px 0;
-        }
-
-        .photo {
+        .profile-img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            border: 5px solid #0044cc;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+
+        .container {
+            padding: 50px 0;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .col-md-6 {
+            flex: 1;
+            max-width: 250px;
+        }
+
+        .btn {
+            background-color: #ff66b2;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #f8bbd0;
+            color: #ff66b2;
         }
 
         .footer {
-            background-color: #0044cc;
-            color: #fff;
+            background-color: #ff66b2;
+            color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
 
-        .social-icons img {
-            width: 40px;
-            margin: 5px;
+        .footer p {
+            font-size: 14px;
         }
 
-        h2 {
-            font-size: 30px;
-            color: #0044cc;
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
             text-decoration: underline;
         }
 
-        h3 {
-            font-size: 26px;
-            color: #0044cc;
-        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
 
-        p {
-            font-size: 18px;
-        }
+            .container {
+                padding: 20px;
+            }
 
-        .btn-primary {
-            background-color: #ff9800;
-            border: none;
-        }
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
 
-        .btn-primary:hover {
-            background-color: #e68900;
+            .btn {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">Doraemon's Resume</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#aboutMe">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#experience">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <h1>Click on the profile picture to view the profile</h1>
 
-    <div class="section" id="aboutMe">
-        <div class="container text-center">
-            <h2>About Me</h2>
-            <img src="https://i.redd.it/q8kcrwr98n571.jpg" class="photo" alt="Doraemon">
-            <h3>Doraemon</h3>
-            <p>The most famous robotic cat from the future.</p>
-        </div>
-    </div>
-
-    <div class="section bg-light" id="experience">
-        <div class="container text-center">
-            <h2>Experience</h2>
-            <p><strong>Future Technology Expert at the 22nd Century</strong> (Future)</p>
-            <ul>
-                <li>Solving problems using futuristic gadgets.</li>
-                <li>Helping Nobita with his everyday challenges.</li>
-                <li>Fighting off the villains from the future with technological inventions.</li>
-            </ul>
-            <p><strong>Assistant to Nobita Nobi</strong> (Past - Present)</p>
-            <ul>
-                <li>Guiding Nobita to make better decisions.</li>
-                <li>Providing various gadgets to assist in his tasks.</li>
-                <li>Being a loyal friend and companion in his adventures.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section" id="contact">
-        <div class="container text-center">
-            <h2>Contact</h2>
-            <p>Email: doraemon@futuremail.com</p>
-            <p>Phone: +22 1234 5678</p>
-            <a href="mailto:doraemon@futuremail.com" class="btn btn-primary">Email Me</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="RTha.html">
+                    <img src="Rhat.jpg" alt="Person 1" class="profile-img">
+                    <p>rmaturas</p>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="profile2.html">
+                    <img src="https://via.placeholder.com/200" alt="Person 2" class="profile-img">
+                    <p>Person 2</p>
+                </a>
+            </div>
         </div>
     </div>
 
     <div class="footer">
-        <p>&copy; 2025 Doraemon</p>
+        <p>&copy; 2025 Barbie's Profile | <a href="index.html">Home</a></p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
