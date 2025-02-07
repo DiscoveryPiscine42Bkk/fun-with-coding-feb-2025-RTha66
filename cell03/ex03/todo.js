@@ -10,9 +10,9 @@ function addTask(taskText) {
 
     const taskDiv = document.createElement('div');
     taskDiv.classList.add('task');
-    taskDiv.innerHTML = taskText + ' <button class="delete">Delete</button>';
+    taskDiv.innerHTML = taskText;
 
-    taskDiv.querySelector('.delete').addEventListener('click', function() {
+    taskDiv.addEventListener('click', function() {
         if (confirm('Are you sure you want to delete this task?')) {
             taskDiv.remove();
             saveTasks();
@@ -25,7 +25,7 @@ function addTask(taskText) {
 
 function saveTasks() {
     const taskList = document.getElementById('taskList');
-    const tasks = Array.from(taskList.children).map(taskDiv => taskDiv.innerText.replace(' Delete', ''));
+    const tasks = Array.from(taskList.children).map(taskDiv => taskDiv.innerText);
     document.cookie = 'tasks=' + JSON.stringify(tasks) + ';path=/';
 }
 
