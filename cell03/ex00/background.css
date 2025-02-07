@@ -1,21 +1,22 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+    text-align: center;
+    padding: 50px;
+    transition: background-color 0.5s ease;
 }
 
 button {
-    background-color: #4CAF50;
+    padding: 15px 30px;
+    font-size: 20px;
     color: white;
-    padding: 15px 32px;
-    font-size: 16px;
+    background-color: #4CAF50;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
+    position: fixed;
+    top: 20px;
+    left: 20px;
 }
 
 button:hover {
