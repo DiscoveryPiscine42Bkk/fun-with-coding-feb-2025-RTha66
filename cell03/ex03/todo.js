@@ -1,40 +1,40 @@
-document.getElementById('newTaskButton').addEventListener('click', function() {
-    const taskText = prompt('Enter a new task:');
-    if (taskText) {
-        addTask(taskText);
+document.getElementById('newTodoButton').addEventListener('click', function() {
+    const todoText = prompt('Enter a new TO DO:');
+    if (todoText) {
+        addTodo(todoText);
     }
 });
 
-function addTask(taskText) {
-    const taskList = document.getElementById('taskList');
+function addTodo(todoText) {
+    const ftList = document.getElementById('ft_list');
 
-    const taskDiv = document.createElement('div');
-    taskDiv.classList.add('task');
-    taskDiv.innerHTML = taskText;
+    const todoDiv = document.createElement('div');
+    todoDiv.classList.add('todo');
+    todoDiv.innerText = todoText;
 
-    taskDiv.addEventListener('click', function() {
-        if (confirm('Are you sure you want to delete this task?')) {
-            taskDiv.remove();
-            saveTasks();
+    todoDiv.addEventListener('click', function() {
+        if (confirm('Are you sure you want to delete this TO DO?')) {
+            todoDiv.remove();
+            saveTodos();
         }
     });
 
-    taskList.prepend(taskDiv);
-    saveTasks();
+    ftList.prepend(todoDiv);
+    saveTodos();
 }
 
-function saveTasks() {
-    const taskList = document.getElementById('taskList');
-    const tasks = Array.from(taskList.children).map(taskDiv => taskDiv.innerText);
-    document.cookie = 'tasks=' + JSON.stringify(tasks) + ';path=/';
+function saveTodos() {
+    const ftList = document.getElementById('ft_list');
+    const todos = Array.from(ftList.children).map(todoDiv => todoDiv.innerText);
+    document.cookie = 'todos=' + JSON.stringify(todos) + ';path=/;max-age=' + 60*60*24*365;
 }
 
-function loadTasks() {
-    const cookie = document.cookie.split('; ').find(row => row.startsWith('tasks='));
+function loadTodos() {
+    const cookie = document.cookie.split('; ').find(row => row.startsWith('todos='));
     if (cookie) {
-        const tasks = JSON.parse(cookie.split('=')[1]);
-        tasks.forEach(taskText => addTask(taskText));
+        const todos = JSON.parse(cookie.split('=')[1]);
+        todos.forEach(todoText => addTodo(todoText));
     }
 }
 
-window.onload = loadTasks;
+window.onload = loadTodos;
